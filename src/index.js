@@ -5,11 +5,24 @@ import dotenv from "dotenv" // ye hmy as soon as possible lgana
 import express from "express";
 import connectDB from "./db/index.js";
 
+
 dotenv.config({path: './env'})   //path of our env file
 // env ko properly work krnay k liye hm kch extra piece of code package.json wali file mai dalnegay jahan dev command thi nodemon wali wahan pe add kardengay
 const app = express()
 
-connectDB()
+connectDB().then(
+    ()=>{
+        app.on("error",(error)=>{
+            console.log(error);
+            throw error
+        })
+        app.listen(process.env.PORT || 8000,()=>{
+            console.log(`Server is running on ${process.env.PORT}`)
+        })
+    }
+).catch((error)=>{
+    console.log("MongoDB connection failed! "+error)
+})
 
 
 
