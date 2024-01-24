@@ -1,14 +1,18 @@
+// URL==> Uniform resource locator
+// URI ==> Uniform resource identifier
+// URN ==> Uniform resource Name
+
 
 //require('dotenv').config()   // esy bh kar saktay lekin code ki consistency ko khrb krta ye
 import dotenv from "dotenv" // ye hmy as soon as possible lgana 
 //chaiye apni main file pe taa k jitnay bh environment variables banaye hain na wo project mai har jagah available hojayen
-import express from "express";
 import connectDB from "./db/index.js";
+import {app} from "./app.js"
 
 
 dotenv.config({path: './env'})   //path of our env file
 // env ko properly work krnay k liye hm kch extra piece of code package.json wali file mai dalnegay jahan dev command thi nodemon wali wahan pe add kardengay
-const app = express()
+// const app = express()
 
 connectDB().then(
     ()=>{
