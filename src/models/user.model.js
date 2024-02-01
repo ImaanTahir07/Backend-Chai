@@ -35,7 +35,7 @@ const userSchema = new Schema({
     },
     watchHistory:[
         {
-            type: Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,    // registeration krwatay huay watchhistory nae lengay
             ref:"Videos"
         }
     ],
