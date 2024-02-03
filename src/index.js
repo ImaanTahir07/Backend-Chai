@@ -10,7 +10,7 @@ import connectDB from "./db/index.js";
 import {app} from "./app.js"
 
 
-dotenv.config({path: './env'})   //path of our env file
+dotenv.config({path: './.env'})   //path of our env file
 // env ko properly work krnay k liye hm kch extra piece of code package.json wali file mai dalnegay jahan dev command thi nodemon wali wahan pe add kardengay
 // const app = express()
 

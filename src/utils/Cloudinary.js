@@ -16,8 +16,8 @@ const uploadFileOnCloudinary = async(localFilePath)=>{
             resource_type: "auto" //===> means that jo bh file arahi h ossay detect krlo yahan pe hm specify bh karsaktay 
             //k file image h ya video lekin hmnay "auto" kardia means jo araha khudi detect karlo
              })
-            // file upload successfully
-            console.log("File Uploaded Successfully");
+            // file upload successfully ab unlink kardo
+            fs.unlinkSync(localFilePath)
             console.log(response.url); //ye url chaiye hoga hmy
             return response
     } catch (error) {
