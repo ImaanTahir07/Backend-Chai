@@ -78,6 +78,7 @@ userSchema.methods.generateRefreshToken = async function(){
     return jwt.sign({
         _id:this._id, // refresh token mai hmary pass kam info hoti hai 
         // or refresh token der se expire hota hai
+        // yahan hmnay user ki id bh daldi apnau refresh token mai taa k hm access karsaken
     },
     process.env.REFRESH_TOKEN_SECRET,{
         expiresIn: process.env.REFRESH_TOKEN_EXPIRY
